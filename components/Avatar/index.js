@@ -72,7 +72,7 @@ Avatar.defaultProps = {
         height:50
     }
 }
-Avatar.PropTypes = {
+Avatar.propTypes = {
     /**
      * 点击头像
      */
