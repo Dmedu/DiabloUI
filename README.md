@@ -1,6 +1,6 @@
 # react-native-diablo-ui (Bate v0.0.1)
 
-DiabloUI是一套用于react-native的JavaScript组件库，代码开源，使用即可简单创建跨平台应用。
+DiabloUI是一套基于RN0.61.5的javascript界面库，开箱即可简单定制您的应用。
 
 ## 安装
 
