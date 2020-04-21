@@ -5,7 +5,7 @@
  * 2020/04/19
  */
 import React from 'react'
-import { 
+import {
     Animated,
     StyleSheet,
     View,
@@ -20,8 +20,8 @@ class PageSlide extends React.PureComponent {
         this.state = {
             pan: new Animated.ValueXY()
         }
-        this.scrollOnMountCalled = false;
-        this.containerWidth = Dimensions.get('window').width;
+        this.scrollOnMountCalled = false
+        this.containerWidth = Dimensions.get('window').width
     }
 
     /**
@@ -31,40 +31,44 @@ class PageSlide extends React.PureComponent {
     _children(children = this.props.children) {
         return React.Children.map(children, (child) => child);
     }
-    
+
     _composeScenes = () => {
-        return this._children().map((child, idx) => {
+        return Array.isArray(this._children()) && this._children().map((child, idx) => {
             return <View
                 key={child.key}
                 style={{ width: this.containerWidth }}
             >
-                { child }
+                {child}
             </View>;
         });
     }
-    
+
     renderScrollableContent = () => {
         const scenes = this._composeScenes();
-        return <Animated.ScrollView
-            horizontal
-            pagingEnabled
-            automaticallyAdjustContentInsets={false}
-            ref={(scrollView) => { this.scrollView = scrollView; }}
-            scrollEventThrottle={16}
-            scrollsToTop={false}
-            showsHorizontalScrollIndicator={false}
-            scrollEnabled={!this.props.locked}
-            directionalLockEnabled
-            alwaysBounceVertical={false}
-            keyboardDismissMode="on-drag"
-            onScroll={this._onScroll}
-            {...this.props.RNScrollViewProps}
-        >
-            {scenes}
-        </Animated.ScrollView>;
+        const locked = scenes.length == 1 ? false : this.props.locked
+        if (Platform.OS === 'ios') {
+            return <ScrollView
+                horizontal
+                pagingEnabled
+                contentOffset={{ x: this.props.initialPage * this.containerWidth }}
+                onScroll={this._onScroll}
+                automaticallyAdjustContentInsets={false}
+                ref={(scrollView) => { this.scrollView = scrollView; }}
+                scrollEventThrottle={16}
+                scrollsToTop={false}
+                showsHorizontalScrollIndicator={false}
+                scrollEnabled={locked}
+                directionalLockEnabled
+                alwaysBounceVertical={false}
+                keyboardDismissMode="on-drag"
+                {...this.props.RNScrollViewProps}
+            >
+                {scenes}
+            </ScrollView>;
+        }
     }
 
-    _onScroll = (e)=> {
+    _onScroll = (e) => {
         if (Platform.OS === 'ios') {
             const offsetX = e.nativeEvent.contentOffset.x;
             if (offsetX === 0 && !this.scrollOnMountCalled) {
@@ -75,38 +79,42 @@ class PageSlide extends React.PureComponent {
         }
     }
 
+    scrollToIndex = ({index,animated = true}) => {
+        this.scrollView.scrollTo({ x: index * this.containerWidth, y: 0, animated })
+    }
+
     render() {
         return this.renderScrollableContent();
     }
 }
 
 PageSlide.defaultProps = {
-    initialPage:1,
-    locked:false
+    initialPage: 0,
+    locked: true,
+    animated:true
 }
 PageSlide.propTypes = {
     /**
+     * 滑动时的回调
+     * 返回滑动的距离
+     */
+    onScroll:PropTypes.func,
+    /**
      * 最初的索引
      */
-    initialPage:PropTypes.number,
+    initialPage: PropTypes.number,
     /**
-     * 禁止滑动
+     * 禁止滑动 
+     * true:可滑动 
+     * false:禁止滑动
      */
-    locked:PropTypes.bool,
+    locked: PropTypes.bool,
     /**
      * ScrollView Props 
      * 建议不要使用
      */
-    RNScrollViewProps:ScrollView.propTypes
+    ...ScrollView.propTypes
 }
 
 export default PageSlide;
-
-const styles = StyleSheet.create({
-    Container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-})
 
