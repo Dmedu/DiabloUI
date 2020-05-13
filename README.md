@@ -14,7 +14,7 @@ DiabloUI是一套基于RN0.61.5的javascript界面库，开箱即可简单定制
 
 如果安装react-native-vector-icons过程中遇到任何问题请按照[此处](https://github.com/oblador/react-native-vector-icons#installation)的步骤进行安装。
 
-### Usage
+### 使用
 
 ```js
 import { SearchBar } from 'react-native-diablo-ui'
