@@ -2,12 +2,10 @@
 
 DiabloUI是一套基于RN0.61.5的javascript界面库，开箱即可简单定制您的应用。
 
-<div style="display:flex;justify-content:space-between;flex-direction:row;background-color:#f6f8fa;padding:20px;">
-    <img src='./doc/deom/278.jpeg'/>
-    <img src='./doc/deom/279.jpeg'/>
-    <img src='./doc/deom/280.jpeg'/>
-    <img src='./doc/deom/281.jpeg'/>
-</div>
+![react-native-diablo-ui Toolkit](./doc/demo/280.jpeg)
+![react-native-diablo-ui Toolkit](./doc/demo/280.jpeg)
+![react-native-diablo-ui Toolkit](./doc/demo/280.jpeg)
+![react-native-diablo-ui Toolkit](./doc/demo/280.jpeg)
 
 ## 开始使用
 
