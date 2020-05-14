@@ -6,6 +6,7 @@ import Progress from './components/Progress'
 import SearchBar from './components/SearchBar'
 import Tab from './components/Tab'
 import Text from './components/Text'
+import Button from './components/Button'
 
 export {
     Avatar,
@@ -15,5 +16,6 @@ export {
     Progress,
     SearchBar,
     Tab,
-    Text
+    Text,
+    Button
 }

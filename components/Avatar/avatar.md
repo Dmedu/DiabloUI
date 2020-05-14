@@ -2,7 +2,7 @@
 
 ## 用法
 
-```
+```js
 import { Avatar } from 'react-native-diablo-ui';
 const App = () => {
     return (
