@@ -33,6 +33,7 @@ import { SearchBar } from 'react-native-diablo-ui'
 - [x] [Tab](https://github.com/Dmedu/DiabloUI/blob/master/components/Tab/Tab.md)
 - [x] [Text](https://github.com/Dmedu/DiabloUI/blob/master/components/Text/text.md)
 - [x] [Button](https://github.com/Dmedu/DiabloUI/blob/master/components/Button/Button.md)
+- [x] [Header](https://github.com/Dmedu/DiabloUI/blob/master/components/Header/Header.md)
 
 ## 关于作者
 

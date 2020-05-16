@@ -56,6 +56,7 @@ class Image extends React.Component {
                     onLoad={this.onLoad}
                     style={[
                         StyleSheet.absoluteFill,
+                        style,
                         {
                           width: style.width,
                           height: style.height,

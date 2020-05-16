@@ -7,6 +7,7 @@ import SearchBar from './components/SearchBar'
 import Tab from './components/Tab'
 import Text from './components/Text'
 import Button from './components/Button'
+import Header from './components/Header'
 
 export {
     Avatar,
@@ -17,5 +18,6 @@ export {
     SearchBar,
     Tab,
     Text,
-    Button
+    Button,
+    Header
 }
