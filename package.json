@@ -13,7 +13,13 @@
     "baseUrl": "https://github.com/Dmedu/react-native-diablo-ui"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "reactjs",
+    "reactnative",
+    "bootstrap",
+    "ui components",
+    "react-native component",
+    "react-native layout"
   ],
   "author": {
     "name": "Ethan zhang",
