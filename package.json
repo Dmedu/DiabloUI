@@ -2,7 +2,7 @@
   "name": "react-native-diablo-ui",
   "title": "React Native Diablo Ui",
   "version": "1.0.0",
-  "description": "TODO",
+  "description": "DiabloUI是一套基于RN0.61.5的javascript界面库，开箱即可简单定制您的应用。",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
